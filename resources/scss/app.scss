@@ -1,1 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
+
+/// homepage
+
+.logo-container {
+    height: 100px;
+    
+}
+
+.logo-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
