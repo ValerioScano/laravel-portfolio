@@ -9,6 +9,7 @@
 <div class="container text-center">
     <h3>{{$project->titolo}}</h3>
     <p>Progetto svolto per {{$project->committente}} e consegnato il {{$project->consegna}}</p>
+    <a href="{{ route("dashboard")}}"> Torna in Dashboard </a>
 </div>
 
 @endsection
