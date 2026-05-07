@@ -39,6 +39,7 @@ class PageController extends Controller
         $project->link=$data["link"];
         $project->committente=$data["committente"];
         $project->consegna=$data["consegna"];
+        $project->type_id = $data['type_id'];
         $project->save();
 
         return redirect()->route("projects.show", $project);
@@ -71,6 +72,7 @@ class PageController extends Controller
         $project->link=$data["link"];
         $project->committente=$data["committente"];
         $project->consegna=$data["consegna"];
+        $project->type_id = $data['type_id'];
         $project->update();
 
         return redirect()->route("projects.show", $project);
