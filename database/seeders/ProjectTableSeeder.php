@@ -20,6 +20,7 @@ class ProjectTableSeeder extends Seeder
             $newProject->link = $faker->url();
             $newProject->committente = $faker->company();
             $newProject->consegna = $faker->date();
+            $newProject->type_id= rand(1,3);
             $newProject->save();
         }
     }
