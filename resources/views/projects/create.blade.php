@@ -30,6 +30,14 @@
         <input type="date" class="form-control" id="consegna" name="consegna">
       </div>
 
+      <div class="mb-3">
+        <label for="type">Tipo progetto</label>
+        <select name="type_id" id="type_id">
+          @foreach($types as $type)
+          <option value="{{$type->id}}">{{$type->stack}}</option>
+        @endforeach
+        </select>
+        </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

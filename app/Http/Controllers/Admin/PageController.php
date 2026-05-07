@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
-
+use App\Models\Type;
 
 class PageController extends Controller
 {
@@ -24,7 +24,8 @@ class PageController extends Controller
      */
     public function create()
     {
-        return view('projects.create');
+    $types = Type::all();    
+    return view('projects.create', compact("types"));
     }
 
     /**
@@ -56,7 +57,8 @@ class PageController extends Controller
      */
     public function edit(Project $project)
     {
-        return view("projects.edit", compact("project"));
+    $types = Type::all();      
+    return view("projects.edit", compact("project", "types"));
     }
 
     /**

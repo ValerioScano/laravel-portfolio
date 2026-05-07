@@ -15,6 +15,8 @@
       <th scope="col">Committente</th>
       <th scope="col">Consegna</th>
       <th scope="col">Link</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Stack</th>
     </tr>
   </thead>
   <tbody>
@@ -24,6 +26,9 @@
           <td>{{ $project->titolo }}</td>
           <td>{{ $project->committente }}</td>
           <td>{{ $project->consegna }}</td>
+          <td>{{ $project->link}}</td>
+          <td>{{ $project->type->tipo }}</td>
+          <td>{{ $project->type->stack }}</td>
           <td><a href="{{ route('projects.show', $project->id) }}" class="btn btn-primary text-white">Dettagli...</a></td>
           <td><a href="{{ route('projects.edit', $project->id) }}" class="btn btn-warning text-white">Modifica</a></td>
           <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ $project->id }}">Elimina</button></td>

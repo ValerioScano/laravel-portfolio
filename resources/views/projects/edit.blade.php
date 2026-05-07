@@ -29,7 +29,11 @@
         <label for="consegna" class="form-label">Consegna</label>
         <input type="date" class="form-control" id="consegna" name="consegna" value="{{$project->consegna}}">
       </div>
-
+        <select name="type_id" id="type_id">
+          @foreach($types as $type)
+          <option value="{{$type->id}}" {{ $project->type_id == $type->id ? 'selected' : '' }} >{{$type->stack}}</option>
+        @endforeach
+        </select>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

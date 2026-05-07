@@ -10,6 +10,7 @@
     <h3>{{$project->titolo}}</h3>
     <p>Progetto svolto per {{$project->committente}} e consegnato il {{$project->consegna}}</p>
     <a href="{{ route("dashboard")}}"> Torna in Dashboard </a>
+    <p>Il tipo è <b>{{$project->type->tipo}}</b>, mentre lo stack è <b>{{$project->type->stack}}</b></p>
 </div>
 
 @endsection
