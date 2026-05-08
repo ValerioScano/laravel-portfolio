@@ -15,7 +15,6 @@
       <th scope="col">Committente</th>
       <th scope="col">Consegna</th>
       <th scope="col">Link</th>
-      <th scope="col">Tipo</th>
       <th scope="col">Stack</th>
     </tr>
   </thead>
@@ -27,7 +26,6 @@
           <td>{{ $project->committente }}</td>
           <td>{{ $project->consegna }}</td>
           <td>{{ $project->link}}</td>
-          <td>{{ $project->type->tipo }}</td>
           <td>{{ $project->type->stack }}</td>
           <td><a href="{{ route('projects.show', $project->id) }}" class="btn btn-primary text-white">Dettagli...</a></td>
           <td><a href="{{ route('projects.edit', $project->id) }}" class="btn btn-warning text-white">Modifica</a></td>

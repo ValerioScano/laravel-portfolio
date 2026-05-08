@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\Type;
+use App\Models\Technology;
 
 class PageController extends Controller
 {
@@ -24,8 +25,9 @@ class PageController extends Controller
      */
     public function create()
     {
-    $types = Type::all();    
-    return view('projects.create', compact("types"));
+    $types = Type::all();
+    $technologies = Technology::all();    
+    return view('projects.create', compact("types", "technologies"));
     }
 
     /**
@@ -42,6 +44,8 @@ class PageController extends Controller
         $project->type_id = $data['type_id'];
         $project->save();
 
+        if($request->has("technologies")) {$project->technologies()->attach($data["technologies"]);
+}
         return redirect()->route("projects.show", $project);
     }
 
@@ -58,8 +62,9 @@ class PageController extends Controller
      */
     public function edit(Project $project)
     {
-    $types = Type::all();      
-    return view("projects.edit", compact("project", "types"));
+    $types = Type::all();  
+    $technologies = Technology::all();        
+    return view("projects.edit", compact("project", "types", "technologies"));
     }
 
     /**
@@ -75,7 +80,9 @@ class PageController extends Controller
         $project->type_id = $data['type_id'];
         $project->update();
 
-        return redirect()->route("projects.show", $project);
+        if($request->has("technologies")) {$project->technologies()->sync($data["technologies"]);
+} else {$project->technologies()->detach();}
+                return redirect()->route("projects.show", $project);
     }
 
     /**

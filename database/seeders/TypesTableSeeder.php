@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use App\Models\Type;
 
-class TypeTableSeeder extends Seeder
+class TypesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,7 +17,6 @@ class TypeTableSeeder extends Seeder
         $stacks = ['Frontend', 'Backend', 'Fullstack'];
         foreach($stacks as $stack) {
         $newType = new Type();
-        $newType->tipo = $faker->word();
         $newType->stack = $stack;
         $newType->save();
         }

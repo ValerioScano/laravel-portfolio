@@ -34,6 +34,15 @@
           <option value="{{$type->id}}" {{ $project->type_id == $type->id ? 'selected' : '' }} >{{$type->stack}}</option>
         @endforeach
         </select>
+
+        <div class="form-control mb-3 d-flex flex-wrap gap-5">
+          @foreach($technologies as $technology)
+          <div>
+            <input type="checkbox" name="technologies[]" value="{{$technology->id}}" id="technology-{{$technology->nome}}" {{$project->technologies->contains($technology->id) ? "checked" : ""}}>
+            <label for="technology-{{$technology->nome}}">{{$technology->nome}}</label>
+          </div>
+          @endforeach
+      </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>

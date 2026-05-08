@@ -38,6 +38,14 @@
         @endforeach
         </select>
         </div>
+      <div class="form-control mb-3 d-flex flex-wrap gap-5">
+          @foreach($technologies as $technology)
+          <div>
+            <input type="checkbox" name="technologies[]" value="{{$technology->id}}" id="technology-{{$technology->nome}}">
+            <label for="technology-{{$technology->nome}}">{{$technology->nome}}</label>
+          </div>
+          @endforeach
+      </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
